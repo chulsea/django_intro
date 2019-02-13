@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, render_to_response, HttpResponse
+from django.template import RequestContext
 from pprint import pprint
 import random
 
@@ -12,3 +13,27 @@ def dinner(request):
         'menus': menus,
         'pick': random.choice(menus)
     })
+    
+def hello(request, name):
+    return render(request, 'hello.html', {'name': name})
+
+def cube(request, num):
+    return render(request, 'cube.html', {'result': num**3})
+    
+def ping(request):
+    return render(request, 'ping.html')
+    
+def pong(request):
+    data = request.GET.get('data')
+    return render(request, 'pong.html', {
+        'data': data
+        })
+        
+def user_new(request):
+    return render(request, 'new.html')
+    
+def user_create(request):
+    nickname = request.POST.get('nickname')
+    pwd = request.POST.get('pwd')
+    return render(request, 'create.html', {'nickname': nickname, 'pwd': pwd})
+    
