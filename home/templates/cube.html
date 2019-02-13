@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    result : {{ result }}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Cube{% endblock %}
+{% block body %}
+    <h1>result : {{ result }}</h1>
+{% endblock %}
