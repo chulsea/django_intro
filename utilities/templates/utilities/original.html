@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}파파고 입력{% endblock %}
+{% block body %}
+    <h1>번역할 영문장을 입력하세요!</h1>
+    <form action="/utilities/translated/" method="POST">
+        {% csrf_token %}
+        <textarea name="sentence"></textarea>
+        <button type="submit">영문번역</button>
+    </form>
+{% endblock %}

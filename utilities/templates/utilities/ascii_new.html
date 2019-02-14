@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}아스키코드!{% endblock %}
+{% block body %}
+    <h1>아스키코드로 만들어보아요~!~</h1>
+    <form action="/utilities/ascii_make/" method="POST">
+        {% csrf_token %}
+        font : <input type="text" name="text"/>
+        폰트 선택 :
+        <select name="font">
+            <option value="short">short</option>
+            <option value="utopia">utopia</option>
+            <option value="rounded">rounded</option>
+            <option value="acrobatic">acrobatic</option>
+            <option value="alligator">alligator</option>
+        </select>
+        <button type="submit">아스키 코드로 변환!</button>
+    </form>
+{% endblock %}
